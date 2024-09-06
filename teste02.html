@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Letras 'A'</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Verifique a ocorrência da letra 'A' em uma string</h1>
+
+    <p>Digite uma string:</p>
+    <input type="text" id="texto" placeholder="Digite o texto aqui">
+    <button onclick="verificarLetraA()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarLetraA() {
+            const texto = document.getElementById("texto").value;
+            const regex = /a/gi; // Expressão regular para encontrar 'a' e 'A'
+            const matches = texto.match(regex); // Retorna um array com todas as ocorrências
+            const quantidade = matches ? matches.length : 0;
+
+            const mensagem = quantidade > 0
+                ? `A letra 'a' ocorre ${quantidade} vez(es) na string.`
+                : `A letra 'a' não foi encontrada na string.`;
+
+            document.getElementById("resultado").innerText = mensagem;
+        }
+    </script>
+
+</body>
+</html>
+
